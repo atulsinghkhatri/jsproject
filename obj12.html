@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<table>
+				<thead>
+				<tr>
+					<td><input type="checkbox" id="selectall" class="css-checkbox" name="selectall"/>Selectall<br></td>
+					<td>Name</td>
+				</tr>
+			</thead>
+			<tbody id="test">
+				<tr>
+					<td><input type="checkbox" class="css-checkbox q" id="1" name="1"/></td>
+					<td>Ram</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"  class="css-checkbox q" id="2" name="2"/></td>
+					<td>Shyam</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"  class="css-checkbox q" id="3" name="3"/></td>
+					<td>Babu</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</body>
+</html>
+<script>
+	$(document).ready(function(){
+		$("#selectall").click(function(){
+			var body = $(this).closest("table").find("tbody").attr('id');
+			if($(this).is(":checked")){
+				$("#"+body+" input[type=checkbox]").each((k,v)=>{
+					$(v).prop('checked',true);
+					
+				});
+			}
+			else{
+				$("#"+body+" input[type=checkbox]").each((k,v)=>{
+					$(v).prop('checked',false);
+					
+				});
+			}
+		});
+
+		$(".q").click(function(){
+			if(!$(this).is(":checked")){
+				$("#selectall").prop("checked",false);
+			}
+			else{
+				var body = $(this).closest("table").find("tbody").attr('id');
+				let flag=1;
+				$("#"+body+" input[type=checkbox]").each((k,v)=>{
+					if(!$(v).is(":checked")){
+						flag = 0;
+					}
+					
+				});
+				if(flag){
+					$("#selectall").prop("checked",true);
+				}
+			}
+		});
+	});
+	</script>

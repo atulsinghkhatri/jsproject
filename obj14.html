@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+
+		<button value=""/>POP Up</button>
+	</body>
+</html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// button.onclick = () =>{
+		// 	//setTimeout(() => {
+		// 		window.open('https://javascript.info');
+		// 	//}, 3000);
+		// }
+		$('button').click(() => {
+			setTimeout(() => {
+				window.location.href = 'https://javascript.info';
+			}, 3000);
+		});
+	});
+	
+</script>

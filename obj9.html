@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+	<head>
+	</head>
+	<body>
+		<script>
+			let obj = {
+				'name':'Atul Singh Khatri',
+				'age':30,
+				getNameAge: function(){
+					console.log(this.name);
+					console.log(this.age);
+				}
+			};
+			let obj2 = obj;
+			obj.getNameAge();
+		</script>
+	</body>
+</html>

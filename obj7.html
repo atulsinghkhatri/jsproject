@@ -1,0 +1,41 @@
+<script>
+/* let object1 = {
+    name:'atul'
+};
+object1.sayHi = function(){
+	console.log("Hello "+this.name);
+}
+object1.sayHi(); */
+
+/*
+use strict;
+function sayHi() {
+  alert(this);
+}
+
+sayHi(); */
+
+/*
+let user = {
+  name: "John",
+  hi() { console.log(this.name); },
+  bye() { console.log("Bye"); }
+};
+
+user.hi(); // John (the simple call works)
+
+// now let's call user.hi or user.bye depending on the name
+(user.name == "John" ? user.hi : user.bye); // Error! 
+*/
+
+
+let user = {
+  name: "John",
+  hi() { console.log(this.name); }
+}
+
+// split getting and calling the method in two lines
+let hi = user.hi;
+hi(); // Error, because this is undefined
+
+</script>

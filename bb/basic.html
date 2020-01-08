@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/underscore-min.js"></script>
+		<script type="text/javascript" src="js/backbone.js"></script>
+	</head>
+	<body>
+		<div id="content"></div>
+		<script>
+			$(document).ready(function(){
+
+				var FirstView = Backbone.View.extend({
+					initialize:function(){
+						this.render();
+						return this; 
+					},
+					render:function(){
+						//console.log(this.el);
+						//console.log(this.$el);
+						this.$el.html("Hello World");
+						//$(this.el).html("hello world"); 
+					}
+				});
+
+				/* var fview = new FirstView({
+					el:"#content"
+				});  */
+				//fview.render();
+
+				//var fview = new FirstView();
+			});
+		</script>
+	</body>
+</html>
